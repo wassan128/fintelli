@@ -16,7 +16,7 @@ def tap(servo):
 	servo.start(0.0)
 
 	servo.ChangeDutyCycle(10.0)
-	time.sleep(0.1)
+	time.sleep(0.5)
 
 	servo.ChangeDutyCycle(8.0)
 	time.sleep(0.5)
