@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+from snowboy import snowboydecoder
 import time
 
 
@@ -26,5 +27,8 @@ def tap(servo):
 
 if __name__ == "__main__":
 	servo = init_servo()
-	tap(servo)
+
+	snowboy = snowboydecoder.Hotwordsnowboy(MODEL, sensitivity=0.5)
+	snowboy.start(detected_callback=tap(servo), sleep_time=0.03)
+	snowboy.terminate()
 
